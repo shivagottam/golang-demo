@@ -26,3 +26,15 @@ tasks:
         echo $DB_NAME
         go mod download
         go test ./...
+  hello-job:
+      runner: sonarsource/sonar-scanner-cli
+      steps:
+   
+      - checkout    
+      - commands:
+        - |
+          sonar-scanner \
+           -Dsonar.projectKey=golang \
+           -Dsonar.sources=. \
+           -Dsonar.host.url=http://13.235.82.212:9000 \
+           -Dsonar.login=7e1d73452a9087e3e352fe5bbcb734c7e8e4f550
