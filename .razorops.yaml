@@ -26,7 +26,7 @@ tasks:
         echo $DB_NAME
         go mod download
         go test ./...
-  hello-job:
+  golang-sonar-job:
       runner: sonarsource/sonar-scanner-cli
       steps:
    
